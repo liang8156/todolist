@@ -26,6 +26,11 @@ export default class TodosList extends Component {
       text: ""
     }));
   }
+  deleteTodo = id => e => {
+    this.setState(prevState => ({
+      items: prevState.items.filter(item => item.id !== id)
+    }));
+  };
   render() {
     return (
       <div>
@@ -41,7 +46,7 @@ export default class TodosList extends Component {
           {this.state.items.map(item => (
             <li key={item.id}>
               {item.text}
-              <button>x</button>
+              <button onClick={this.deleteTodo(item.id)}>x</button>
             </li>
           ))}
         </ul>
