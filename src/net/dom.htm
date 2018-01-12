@@ -1,0 +1,20 @@
+<!DOCTYPE htm>
+<html>
+<head>
+    <title>Javascript</title>
+    <script type="text/javascript">
+    function change(){
+        var spanObj = window.document.getElementById("emotion");//window 可省略
+        spanObj.innerHTML="";
+        spanObj.style.color="red";
+        spanObj.style.fontWeight="bold";
+    }
+    </script>
+</head>
+<body>
+    <div>
+        Today is a <span id="emotion">good</span> day.
+    </div>
+    <button onclick="change()">change</button>
+</body>
+</html>

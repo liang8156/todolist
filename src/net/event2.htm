@@ -1,0 +1,23 @@
+<!DOCTYPE htm>
+<html>
+<head>
+    <title>Javascript</title>
+    <script type="text/javascript">
+//用Javascript的程式 做動態的註冊處理器
+    function init(){
+        var btn = document.getElementById("btn");
+            /*btn.onclick=function(){
+                alert("clicked");
+            }*/
+        var handler = function(){//準備一個事件的處理器（對應事件的函式）
+            alert("clicked");
+        };
+        btn.addEventListener("click"/*事件的名稱*/,handler);
+    }
+    </script>
+</head>
+<body onload="init();">
+    <button id="btn">click</button>
+
+</body>
+</html>

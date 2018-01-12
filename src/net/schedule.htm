@@ -1,0 +1,25 @@
+<!DOCTYPE htm>
+<html>
+<head>
+    <title>Javascript</title>
+    <script type="text/javascript">
+    var timer;
+    function init(){
+        timer=document.getElementById("timer");
+        window.setInterval(countdown,1000);
+    }
+    function countdown(){
+        timer.innerHTML=timer.innerHTML-1;
+        if(timer.innerHTML>0){
+            //window.setTimeout(countdown,1000);
+        }
+        else{
+            document.location="https://www.google.com.tw/";
+        }
+    }
+    </script>
+</head>
+<body onload="init();">
+    <span id="timer">3</span>
+</body>
+</html>

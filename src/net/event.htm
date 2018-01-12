@@ -1,0 +1,22 @@
+<!DOCTYPE htm>
+<html>
+<head>
+    <title>Javascript</title>
+    <script type="text/javascript">
+    function over(element){
+        element.style.color="red";
+    }
+    function out(element){
+        element.style.color="black"
+    }
+    </script>
+</head>
+<body>
+    <button onclick="alert('clicked');">click</button>
+    <span onmouseover="over(this);" 
+        onmouseout="out(this);">test</span>
+    <div onmouseover="over(this);" 
+        onmouseout="out(this);">tes2</div>
+
+</body>
+</html>

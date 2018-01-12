@@ -1,0 +1,40 @@
+<!DOCTYPE htm>
+<html>
+<head>
+    <title>Javascript</title>
+    <script type="text/javascript">
+        //imput:prompt(提示語,預設)->output:alert
+    //建立空白文件    
+    var point = new Object();
+    //建立物件的成員(屬性與方法）)
+    point.x=3;//屬性
+    point.y=4;
+    point.getPosition=function(){//方法
+        alert(this.x+","+this.y);
+    };
+    //使用物件
+    alert(point.x);
+    point.getPosition();
+
+    var player = new Object();
+    player.name = "john";
+    player.hp = 100;
+    player.fight = function(){
+        this.hp = this.hp-2;
+    }; 
+    player.rest = function(){
+        this.hp++;
+    }; 
+    player.report = function(){
+        alert(this.name+":"+this.hp);
+    };
+
+    player.fight();
+    player.rest();
+    player.report();
+
+    </script>
+</head>
+<body>
+</body>
+</html>

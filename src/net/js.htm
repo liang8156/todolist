@@ -1,0 +1,31 @@
+<!DOCTYPE htm>
+<html>
+<head>
+    <title>Javascript</title>
+    <script type="text/javascript">
+        //imput:prompt(提示語,預設)->output:alert
+        var n1 = prompt("n1?","");
+        var n2 = prompt("n2?","");
+        n1=Number(n1);  //字串轉數字
+        n2=Number(n2);
+        var op = prompt("+,-,*,/?","");
+        var result=5;
+
+        if(op=="+"){
+            result=n1+n2;
+        }else if(op=="-"){
+            result=n1-n2;
+        }else if(op=="*"){
+            result=n1*n2;}
+        else if(op=="/"){
+            result=n1/n2;
+        }else{
+            result="none";
+        }
+
+        alert(result);
+    </script>
+</head>
+<body>
+</body>
+</html>
