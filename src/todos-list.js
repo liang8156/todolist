@@ -5,14 +5,14 @@ export default class TodosList extends Component {
   constructor(props) {
     super(props);
     this.state = { items: [], text: "" };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    //this.handleChange = this.handleChange.bind(this);
+    //this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleChange(e) {
+  handleChange = e => {
     this.setState({ text: e.target.value });
-  }
+  };
   //this.setState({ text: e.target.value, items: [] });
-  handleSubmit(e) {
+  handleSubmit = e => {
     e.preventDefault();
     if (!this.state.text.length) {
       return;
@@ -25,7 +25,7 @@ export default class TodosList extends Component {
       items: [...prevState.items, newItem],
       text: ""
     }));
-  }
+  };
   deleteTodo = id => e => {
     this.setState(prevState => ({
       items: prevState.items.filter(item => item.id !== id)
