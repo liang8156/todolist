@@ -18,8 +18,7 @@ export default class TodosList extends Component {
       return;
     }
     const newItem = {
-      text: this.state.text,
-      id: Date.now()
+      text: this.state.text
     };
     this.setState(prevState => ({
       items: [...prevState.items, newItem],
@@ -28,7 +27,7 @@ export default class TodosList extends Component {
   };
   deleteTodo = id => e => {
     this.setState(prevState => ({
-      items: prevState.items.filter(item => item.id !== id)
+      items: prevState.items.filter((item, item_id) => item_id !== id)
     }));
   };
   render() {
@@ -43,10 +42,10 @@ export default class TodosList extends Component {
           <button>Add</button>
         </form>
         <ul>
-          {this.state.items.map(item => (
-            <li key={item.id}>
+          {this.state.items.map((item, id) => (
+            <li key={id}>
               {item.text}
-              <button onClick={this.deleteTodo(item.id)}>x</button>
+              <button onClick={this.deleteTodo(id)}>x</button>
             </li>
           ))}
         </ul>
