@@ -14,14 +14,10 @@ import TodosList from "./todos-list";
     }
 ];*/
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div>
         <h1>MyTodoList</h1>
-
         <TodosList />
       </div>
     );
