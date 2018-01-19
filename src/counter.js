@@ -1,48 +1,24 @@
 import React, { Component } from "react";
-import { createStore, combineReducers } from "redux";
+import { createStore } from "redux";
+import * as types from "./action/actionTypes";
+import rootReducer from "./reducer/rootReducer";
 
-const INCRMENT = "INCRMENT";
-const DECRMENT = "DECRMENT";
-const CHANGE_NAME = "CHANGE_NAME";
-
-function countReducer(state = 0, action) {
-  switch (action.type) {
-    case INCRMENT:
-      return state + 1;
-    case DECRMENT:
-      return state - 1;
-    default:
-      return state;
-  }
-}
-function userReducer(state = 0, action) {
-  switch (action.type) {
-    case CHANGE_NAME:
-      return { ...state, name: action.name };
-    default:
-      return state;
-  }
-}
-const rootReducer = combineReducers({
-  user: userReducer,
-  count: countReducer
-});
 const store = createStore(rootReducer);
 store.subscribe(() => {
   console.log(store.getState());
 });
 store.dispatch({
-  type: "INCRMENT"
+  type: types.INCRMENT
 });
 store.dispatch({
-  type: "CHANGE_NAME",
+  type: types.CHANGE_NAME,
   name: "alex"
 });
 store.dispatch({
-  type: "DECRMENT"
+  type: types.DECRMENT
 });
 store.dispatch({
-  type: "CHANGE_NAME",
+  type: types.CHANGE_NAME,
   name: "alen"
 });
 
