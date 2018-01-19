@@ -11,14 +11,14 @@ export default class counter extends Component {
   }
   onIncrement = e => {
     console.log("increment");
-    this.context.store.dispatch({ type: "INCRMENT" });
+    this.context.store.dispatch({ type: "INCREMENT" });
     this.setState({
       count: this.context.store.getState().count
     });
   };
   onDecrement = e => {
     console.log("decrement");
-    this.context.store.dispatch({ type: "DECRMENT" });
+    this.context.store.dispatch({ type: "DECREMENT" });
     this.setState({
       count: this.context.store.getState().count
     });
