@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 //import CreateTodo from './create-todo';
 import TodosList from "./todos-list";
+import Conuter from "./counter";
 //import HelloMessage from './HelloMessage';
 
 /*const todos = [
@@ -18,6 +19,7 @@ export default class App extends Component {
     return (
       <div>
         <h1>MyTodoList</h1>
+        <Conuter />
         <TodosList />
       </div>
     );
