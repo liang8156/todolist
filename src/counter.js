@@ -1,34 +1,35 @@
 import React, { Component } from "react";
-import { createStore } from "redux";
-import * as types from "./action/actionTypes";
-import rootReducer from "./reducer/rootReducer";
-
-const store = createStore(rootReducer);
-store.subscribe(() => {
-  console.log(store.getState());
-});
-store.dispatch({
-  type: types.INCRMENT
-});
-store.dispatch({
-  type: types.CHANGE_NAME,
-  name: "alex"
-});
-store.dispatch({
-  type: types.DECRMENT
-});
-store.dispatch({
-  type: types.CHANGE_NAME,
-  name: "alen"
-});
+import PropTypes from "prop-types";
 
 export default class counter extends Component {
+  static contextTypes = {
+    store: PropTypes.object
+  };
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+  onIncrement = e => {
+    console.log("increment");
+    this.context.store.dispatch({ type: "INCRMENT" });
+    this.setState({
+      count: this.context.store.getState().count
+    });
+  };
+  onDecrement = e => {
+    console.log("decrement");
+    this.context.store.dispatch({ type: "DECRMENT" });
+    this.setState({
+      count: this.context.store.getState().count
+    });
+  };
   render() {
     return (
       <div>
         <ul>
-          <button>+</button>
-          <button>-</button>
+          <h2> {this.state.count}</h2>
+          <button onClick={this.onIncrement}>+</button>
+          <button onClick={this.onDecrement}>-</button>
         </ul>
       </div>
     );
