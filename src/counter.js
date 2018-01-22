@@ -5,9 +5,12 @@ export default class counter extends Component {
   static contextTypes = {
     store: PropTypes.object
   };
+  static propTypes = {
+    initialCount: PropTypes.number.isRequired
+  };
   constructor(props) {
     super(props);
-    this.state = { count: 0 };
+    this.state = { count: this.props.initialCount };
   }
   onIncrement = e => {
     console.log("increment");
