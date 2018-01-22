@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-export default class counter extends Component {
+export default class Counter extends Component {
   static contextTypes = {
     store: PropTypes.object
   };
