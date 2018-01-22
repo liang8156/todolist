@@ -12,6 +12,12 @@ export default class counter extends Component {
     super(props);
     this.state = { count: this.props.initialCount };
   }
+  componentWillMount() {
+    this.context.store.dispatch({
+      type: "INIT",
+      count: this.props.initialCount
+    });
+  }
   onIncrement = e => {
     console.log("increment");
     this.context.store.dispatch({ type: "INCREMENT" });

@@ -19,7 +19,7 @@ export default class App extends Component {
     return (
       <div>
         <h1>MyTodoList</h1>
-        <Conuter initialCount={0} />
+        <Conuter initialCount={10} />
         <TodosList />
       </div>
     );
