@@ -10,7 +10,7 @@ it("initialize state of count should be 0", () => {
   const store = createStore(rootReducer);
   expect(store.getState().count).toEqual(0);
 });
-it('state of count should be 2 after receive action["INCREMENT"]', () => {
+it('state of count should be 1 after receive action["INCREMENT"]', () => {
   const store = createStore(rootReducer);
   store.dispatch({ type: "INCREMENT" });
   expect(store.getState().count).toEqual(1);
