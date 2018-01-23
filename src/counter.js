@@ -10,7 +10,10 @@ export default class Counter extends Component {
   };
   constructor(props) {
     super(props);
-    this.state = { count: this.props.initialCount };
+    this.state = {
+      count: this.props.initialCount,
+      style: { color: "white" }
+    };
   }
   componentWillMount() {
     this.context.store.dispatch({
@@ -18,18 +21,30 @@ export default class Counter extends Component {
       count: this.props.initialCount
     });
   }
-  onIncrement = e => {
+  onIncrement = () => {
     console.log("increment");
     this.context.store.dispatch({ type: "INCREMENT" });
     this.setState({
       count: this.context.store.getState().count
     });
   };
-  onDecrement = e => {
+  onDecrement = () => {
     console.log("decrement");
     this.context.store.dispatch({ type: "DECREMENT" });
     this.setState({
       count: this.context.store.getState().count
+    });
+  };
+  onHover = e => {
+    console.log("onHover");
+    this.setState({
+      style: { color: "red" }
+    });
+  };
+  onHout = e => {
+    console.log("onHout");
+    this.setState({
+      style: { color: "white" }
     });
   };
   render() {
@@ -39,6 +54,10 @@ export default class Counter extends Component {
           <h2> {this.state.count}</h2>
           <button onClick={this.onIncrement}>+</button>
           <button onClick={this.onDecrement}>-</button>
+          <span style={this.state.style}>aaaaaaa</span>
+          <button onMouseOver={this.onHover} onMouseOut={this.onHout}>
+            ----
+          </button>
         </ul>
       </div>
     );
